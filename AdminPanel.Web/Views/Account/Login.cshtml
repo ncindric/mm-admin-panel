@@ -1,27 +1,27 @@
 ﻿@model LoginPostModel
 
-@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-control" }))
 {
     @if (ViewBag.ErrorMessage != null)
     {
         <p class="alert">@ViewBag.ErrorMessage</p>
     }
 
-    <fieldset>
-        @Html.DisplayNameFor(m => m.Email)
+    <div class="row mb-4 text-center align-content-center">
+        @Html.LabelFor(m => m.Email, new { @class="form-label" })
         @Html.TextBoxFor(m => m.Email)
         @Html.ValidationMessageFor(m => m.Email)
-    </fieldset>
-    <fieldset>
-        @Html.DisplayNameFor(m => m.Password)
+    </div>
+    <div class="row mb-4 text-center align-content-center">
+        @Html.LabelFor(m => m.Password, new { @class="form-label" })
         @Html.PasswordFor(m => m.Password)
         @Html.ValidationMessageFor(m => m.Password)
-    </fieldset>
-    <fieldset>
-        @Html.DisplayNameFor(m => m.IsPersistent)
+    </div>
+    <div class="mb-4 text-center align-content-center">
+        @Html.LabelFor(m => m.IsPersistent, new { @class="form-label" })
         @Html.CheckBoxFor(m => m.IsPersistent)
         @Html.ValidationMessageFor(m => m.IsPersistent)
-    </fieldset>
-
-    <button type="submit">Log in</button>
+    </div>
+    <div class="mb-4 text-center align-content-center">
+    <button type="submit" class="btn-success">Log in</button></div>
 }

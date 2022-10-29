@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace AdminPanel.Web.Models
 {
@@ -11,6 +12,7 @@ namespace AdminPanel.Web.Models
         [Required]
         public string Password { get; set; } = string.Empty;
 
+        [DisplayName("Stay signed in?")]
         public bool IsPersistent { get; set; } = false;
     }
 }
