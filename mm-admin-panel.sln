@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminPanel.Abstractions", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminPanel.Business", "AdminPanel.Business\AdminPanel.Business.csproj", "{21B78621-45C8-4C9E-9671-4CD08D603620}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminPanel.Search", "AdminPanel.Search\AdminPanel.Search.csproj", "{110E5B90-9C29-4E4A-BB81-5C8BDC34DC54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{21B78621-45C8-4C9E-9671-4CD08D603620}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21B78621-45C8-4C9E-9671-4CD08D603620}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21B78621-45C8-4C9E-9671-4CD08D603620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{110E5B90-9C29-4E4A-BB81-5C8BDC34DC54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{110E5B90-9C29-4E4A-BB81-5C8BDC34DC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{110E5B90-9C29-4E4A-BB81-5C8BDC34DC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{110E5B90-9C29-4E4A-BB81-5C8BDC34DC54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
