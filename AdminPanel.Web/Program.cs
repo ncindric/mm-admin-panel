@@ -4,6 +4,8 @@ using AdminPanel.Search.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddJsonFile("devsettings.json", true);
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
