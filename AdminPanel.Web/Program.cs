@@ -9,7 +9,7 @@ builder.Configuration.AddJsonFile("devsettings.json", true);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddData();
+builder.Services.AddData(builder.Configuration);
 
 builder.Services.AddBusiness();
 
