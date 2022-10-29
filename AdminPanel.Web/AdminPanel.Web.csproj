@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AdminPanel.Abstractions\AdminPanel.Abstractions.csproj" />
+    <ProjectReference Include="..\AdminPanel.Business\AdminPanel.Business.csproj" />
+    <ProjectReference Include="..\AdminPanel.Data\AdminPanel.Data.csproj" />
+  </ItemGroup>
+
 </Project>

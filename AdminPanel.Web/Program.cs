@@ -1,7 +1,15 @@
+using AdminPanel.Business.Infrastructure;
+using AdminPanel.Data.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddData();
+
+builder.Services.AddBusiness();
+
 
 var app = builder.Build();
 
