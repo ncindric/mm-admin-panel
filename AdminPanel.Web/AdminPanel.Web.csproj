@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdminPanel.Abstractions\AdminPanel.Abstractions.csproj" />
+    <ProjectReference Include="..\AdminPanel.Business\AdminPanel.Business.csproj" />
+    <ProjectReference Include="..\AdminPanel.Data\AdminPanel.Data.csproj" />
+    <ProjectReference Include="..\AdminPanel.Search\AdminPanel.Search.csproj" />
+  </ItemGroup>
+
+</Project>
