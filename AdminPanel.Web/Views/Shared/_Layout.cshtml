@@ -26,6 +26,17 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                    @if (User.Identity is { IsAuthenticated: true})
+                    {
+                        <li>Logged in as @User.Identity.Name</li>
+                        <li>@Html.ActionLink("Log out", "Logout", "Account")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Log in", "Login", "Account")</li>
+                    }
+                    </ul>
                 </div>
             </div>
         </nav>
