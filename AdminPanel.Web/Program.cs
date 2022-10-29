@@ -1,5 +1,6 @@
 using AdminPanel.Business.Infrastructure;
 using AdminPanel.Data.Infrastructure;
+using AdminPanel.Search.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddData();
 
 builder.Services.AddBusiness();
 
+builder.Services.AddSearch();
 
 var app = builder.Build();
 
