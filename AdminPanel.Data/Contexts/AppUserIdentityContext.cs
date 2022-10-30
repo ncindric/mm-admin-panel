@@ -3,9 +3,11 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
+#nullable disable
+
 namespace AdminPanel.Data.Contexts
 {
-    internal class AppUserIdentityContext : IdentityDbContext<AppUser>
+    internal class AppUserIdentityContext : IdentityDbContext<AppUser, AppRole, string>
     {
         public AppUserIdentityContext(DbContextOptions<AppUserIdentityContext> options)
             : base(options)
@@ -19,5 +21,7 @@ namespace AdminPanel.Data.Contexts
                 .HasMany(p => p.Roles)
                 .WithMany(r => r.Permissions);
         }
+
+        public DbSet<Permission> Permissions { get; set; }
     }
 }
