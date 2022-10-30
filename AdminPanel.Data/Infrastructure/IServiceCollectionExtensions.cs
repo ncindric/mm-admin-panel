@@ -15,7 +15,7 @@ namespace AdminPanel.Data.Infrastructure
         {
             services.AddDbContext<AppUserIdentityContext>(
                 options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<AppUser, IdentityRole>(
+            services.AddIdentity<AppUser, AppRole>(
                     options =>
                     {
                         options.SignIn.RequireConfirmedEmail = true;
