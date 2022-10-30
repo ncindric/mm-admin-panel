@@ -4,10 +4,12 @@ using AdminPanel.Search.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddJsonFile("devsettings.json", true);
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddData();
+builder.Services.AddData(builder.Configuration);
 
 builder.Services.AddBusiness();
 
@@ -23,6 +25,8 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
