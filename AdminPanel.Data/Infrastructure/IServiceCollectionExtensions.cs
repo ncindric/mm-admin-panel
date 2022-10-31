@@ -33,6 +33,7 @@ namespace AdminPanel.Data.Infrastructure
 
             services.AddTransient<IAuthenticationService, AuthenticationService>();
             services.AddTransient<IPermissionService, PermissionService>();
+            services.AddTransient<IPermissionInitializer, PermissionInitializer>();
             services.AddTransient<IRoleService, RoleService>();
 
             return services;
