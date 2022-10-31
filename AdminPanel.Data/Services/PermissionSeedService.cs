@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using AdminPanel.Abstractions.Data.Services;
+﻿using AdminPanel.Abstractions.Data.Services;
 using AdminPanel.Data.Contexts;
 using AdminPanel.Data.Models;
 using AdminPanel.Shared.Constants;
@@ -13,35 +7,17 @@ using Microsoft.AspNetCore.Identity;
 
 namespace AdminPanel.Data.Services
 {
-    internal class PermissionInitializer : IPermissionInitializer
+    internal class PermissionSeedService : IPermissionSeedService
     {
-        private readonly RoleManager<AppRole> _roleManager;
         private readonly AppUserIdentityContext _context;
 
-        public PermissionInitializer(
-            RoleManager<AppRole> roleManager,
-            AppUserIdentityContext context)
+        public PermissionSeedService(AppUserIdentityContext context)
         {
-            _roleManager = roleManager;
             _context = context;
         }
 
-        public async Task Initialize()
+        public async Task Seed()
         {
-            foreach (var role in RoleNames.AllRoles)
-            {
-                if (await _roleManager.FindByNameAsync(role) != null)
-                {
-                    continue;
-                }
-
-                await _roleManager.CreateAsync(new AppRole
-                {
-                    Name = role,
-                    NormalizedName = _roleManager.NormalizeKey(role),
-                });
-            }
-
             List<string> permissionsToAdd = new();
             var existingPermissions = _context.Permissions.ToList();
             foreach (var permission in PermissionNames.AllPermissions)
