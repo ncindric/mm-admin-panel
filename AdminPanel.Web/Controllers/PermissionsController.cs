@@ -1,15 +1,15 @@
 ﻿using AdminPanel.Abstractions.Core;
 using AdminPanel.Abstractions.Data.Services;
 using AdminPanel.Shared.Constants;
+using AdminPanel.Web.Infrastructure;
 using AdminPanel.Web.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AdminPanel.Web.Controllers
 {
     [Route("permissions/{action?}")]
-    [Authorize(Roles = $"{RoleNames.Administrator}")]
+    [AuthorizePermission(PermissionNames.EditPermissions)]
     public class PermissionsController : Controller
     {
         private readonly IPermissionService _permissionService;
