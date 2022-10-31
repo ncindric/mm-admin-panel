@@ -1,13 +1,17 @@
 using AdminPanel.Business.Infrastructure;
 using AdminPanel.Data.Infrastructure;
 using AdminPanel.Search.Infrastructure;
+using AdminPanel.Web.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration.AddJsonFile("devsettings.json", true);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(o =>
+{
+    o.Filters.Add<PermissionFilter>();
+});
 
 builder.Services.AddData(builder.Configuration);
 
