@@ -2,6 +2,7 @@
 using AdminPanel.Data.Contexts;
 using AdminPanel.Data.Models;
 using AdminPanel.Data.Services;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -15,7 +16,7 @@ namespace AdminPanel.Data.Infrastructure
         {
             services.AddDbContext<AppUserIdentityContext>(
                 options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<AppUser, IdentityRole>(
+            services.AddIdentity<AppUser, AppRole>(
                     options =>
                     {
                         options.SignIn.RequireConfirmedEmail = true;
@@ -31,6 +32,8 @@ namespace AdminPanel.Data.Infrastructure
                 .AddDefaultTokenProviders();
 
             services.AddTransient<IAuthenticationService, AuthenticationService>();
+            services.AddTransient<IPermissionService, PermissionService>();
+            services.AddTransient<IRoleService, RoleService>();
 
             return services;
         }

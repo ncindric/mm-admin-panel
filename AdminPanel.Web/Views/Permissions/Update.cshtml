@@ -1,0 +1,21 @@
+﻿@model PermissionUpdateViewModel
+
+@using (Html.BeginForm("Submit", "Permissions", FormMethod.Post, new { @class = "form-control" }))
+{
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <p class="alert">@ViewBag.ErrorMessage</p>
+    }
+
+    <h1>@Model.Permission.Name</h1>
+
+
+    <input type="hidden" id="Id" name="Id" value="@Model.Permission.Id"/>
+    <input type="hidden" id="Name" name="Name" value="@Model.Permission.Name"/>
+    <div class="row mb-4 text-center align-content-center">
+        @Html.ListBoxFor(m => m.Roles, Model.Roles)
+    </div>
+    <div class="mb-4 text-center align-content-center">
+        <button type="submit" class="btn-success">Update</button>
+    </div>
+}

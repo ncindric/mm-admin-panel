@@ -7,10 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AdminPanel.Abstractions\AdminPanel.Abstractions.csproj" />
     <ProjectReference Include="..\AdminPanel.Business\AdminPanel.Business.csproj" />
     <ProjectReference Include="..\AdminPanel.Data\AdminPanel.Data.csproj" />
     <ProjectReference Include="..\AdminPanel.Search\AdminPanel.Search.csproj" />
+    <ProjectReference Include="..\AdminPanel.Shared\AdminPanel.Shared.csproj" />
   </ItemGroup>
 
 </Project>
