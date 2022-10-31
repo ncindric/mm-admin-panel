@@ -1,0 +1,29 @@
+﻿@using AdminPanel.Abstractions.Data.Models.Permissions
+
+@model IReadOnlyList<PermissionDto>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Roles</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var permission in Model)
+        {
+            <tr>
+                <td>
+                    @permission.Name
+                </td>
+                <td>
+                    @string.Join(",", permission.Roles.Select(r => r.Name))
+                </td>
+                <td>
+                    @Html.ActionLink("Update", "Update", new { id = permission.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
