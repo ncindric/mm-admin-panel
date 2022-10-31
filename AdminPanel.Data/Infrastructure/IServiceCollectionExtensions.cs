@@ -32,6 +32,8 @@ namespace AdminPanel.Data.Infrastructure
                 .AddDefaultTokenProviders();
 
             services.AddTransient<IAuthenticationService, AuthenticationService>();
+            services.AddTransient<IPermissionService, PermissionService>();
+            services.AddTransient<IRoleService, RoleService>();
 
             return services;
         }
