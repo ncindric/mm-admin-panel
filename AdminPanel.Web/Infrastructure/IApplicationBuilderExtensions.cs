@@ -1,4 +1,4 @@
-﻿using AdminPanel.Abstractions.Data.Services;
+﻿using AdminPanel.Abstractions.Core.Initialization;
 
 namespace AdminPanel.Web.Infrastructure
 {
@@ -7,8 +7,11 @@ namespace AdminPanel.Web.Infrastructure
         public static void UsePermissions(this IApplicationBuilder app)
         {
             var scope = app.ApplicationServices.CreateScope();
-            var permissionInitializer = scope.ServiceProvider.GetRequiredService<IPermissionInitializer>();
-            permissionInitializer.Initialize().GetAwaiter().GetResult();
+
+            foreach (var initializer in scope.ServiceProvider.GetServices<IInitializer>())
+            {
+                initializer.Initialize();
+            }
         }
     }
 }
