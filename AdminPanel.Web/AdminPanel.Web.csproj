@@ -18,6 +18,7 @@
     <ProjectReference Include="..\AdminPanel.Business\AdminPanel.Business.csproj" />
     <ProjectReference Include="..\AdminPanel.Data\AdminPanel.Data.csproj" />
     <ProjectReference Include="..\AdminPanel.Search\AdminPanel.Search.csproj" />
+    <ProjectReference Include="..\AdminPanel.Shared\AdminPanel.Shared.csproj" />
   </ItemGroup>
 
 </Project>
