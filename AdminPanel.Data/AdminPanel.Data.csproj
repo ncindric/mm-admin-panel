@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AdminPanel.Abstractions\AdminPanel.Abstractions.csproj" />
+    <ProjectReference Include="..\AdminPanel.Shared\AdminPanel.Shared.csproj" />
   </ItemGroup>
 
 </Project>
