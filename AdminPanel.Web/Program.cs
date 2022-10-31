@@ -21,6 +21,8 @@ builder.Services.AddSearch();
 
 var app = builder.Build();
 
+app.UsePermissions();
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
