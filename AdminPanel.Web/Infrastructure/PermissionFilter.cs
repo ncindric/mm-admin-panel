@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+
 using AdminPanel.Abstractions.Data.Services;
-using AdminPanel.Web.Controllers;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -26,7 +26,7 @@ namespace AdminPanel.Web.Infrastructure
 
             var permissionAttribute = controllerActionDescriptor.MethodInfo
                 .GetCustomAttribute<AuthorizePermissionAttribute>();
-            
+
             // fallback to controller attribute if not specified on method
             permissionAttribute ??= controllerActionDescriptor.ControllerTypeInfo
                 .GetCustomAttribute<AuthorizePermissionAttribute>();

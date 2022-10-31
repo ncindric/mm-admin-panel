@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-
-namespace AdminPanel.Web.Infrastructure
+﻿namespace AdminPanel.Web.Infrastructure
 {
     public sealed class AuthorizePermissionAttribute : Attribute
     {

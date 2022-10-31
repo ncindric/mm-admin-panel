@@ -3,6 +3,7 @@ using AdminPanel.Abstractions.Data.Services;
 using AdminPanel.Shared.Constants;
 using AdminPanel.Web.Infrastructure;
 using AdminPanel.Web.Models;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -82,5 +83,5 @@ namespace AdminPanel.Web.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-}
+    }
 }
