@@ -4,6 +4,6 @@ namespace AdminPanel.Data.Models
 {
     internal class AppRole : IdentityRole
     {
-        public IReadOnlyList<Permission> Permissions { get; set; } = Array.Empty<Permission>();
+        public List<Permission> Permissions { get; set; } = new();
     }
 }

@@ -13,6 +13,6 @@ namespace AdminPanel.Data.Models
         [Required]
         public string Name { get; set; } = string.Empty;
 
-        public IReadOnlyList<AppRole> Roles { get; set; } = Array.Empty<AppRole>();
+        public List<AppRole> Roles { get; set; } = new();
     }
 }
