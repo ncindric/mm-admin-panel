@@ -7,6 +7,8 @@ namespace AdminPanel.Abstractions.Data.Services
     {
         IReadOnlyList<PermissionDto> Get();
 
+        PermissionDto? Get(int id);
+
         Result Update(PermissionDto permission);
     }
 }
