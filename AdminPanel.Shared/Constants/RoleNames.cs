@@ -10,6 +10,7 @@ namespace AdminPanel.Shared.Constants
         public static readonly IReadOnlyList<string> AllRoles = new List<string>
         {
             Administrator,
+            Editor,
         };
     }
 }
